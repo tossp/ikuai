@@ -22,6 +22,7 @@ type LanDeviceInfo struct {
 	Download     int    `json:"download"`
 	AuthType     int    `json:"auth_type"`
 	IPAddr       string `json:"ip_addr"`
+	LinkAddr     string `json:"link_addr"`
 	ClientDevice string `json:"client_device"`
 	Timestamp    int    `json:"timestamp"`
 	Comment      string `json:"comment"`
