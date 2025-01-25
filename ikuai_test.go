@@ -7,7 +7,7 @@ import (
 )
 
 func getClient() *IKuai {
-	i := NewIKuai("http://10.10.1.253", "test", "test123", true, false)
+	i := NewIKuai("http://192.168.9.1", "root", "123456", true, false)
 
 	return i
 }
@@ -50,10 +50,6 @@ func TestIKuai_ShowMonitorLan(t *testing.T) {
 
 	result, err := client.ShowMonitorLan()
 	if err != nil {
-		return
-	}
-
-	if err != nil {
 		t.Error(err)
 	}
 
@@ -69,9 +65,6 @@ func TestIKuai_ShowSysStat(t *testing.T) {
 	}
 
 	result, err := client.ShowSysStat()
-	if err != nil {
-		return
-	}
 
 	if err != nil {
 		t.Error(err)
