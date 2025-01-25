@@ -1,4 +1,4 @@
-module github.com/jakeslee/ikuai
+module github.com/tossp/ikuai
 
 go 1.23.5
 
