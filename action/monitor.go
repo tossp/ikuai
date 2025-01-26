@@ -69,7 +69,8 @@ func NewShowSysStatAction() *Action {
 		Action:   "show",
 		FuncName: "homepage",
 		Param: map[string]interface{}{
-			"TYPE": "sysstat,dhcp_addrpool_num",
+			"TYPE":   "sysstat,dhcp_addrpool_num,app_flow",
+			"minute": "30",
 		},
 	}
 }
@@ -122,11 +123,15 @@ type SysStat struct {
 type DhcpAddrpoolNum struct {
 	AvailableNum int `json:"available_num"`
 }
+type AppFlow struct {
+	AppFlow []map[string]int `json:"app_flow"`
+}
 
 type ShowSysStatResult struct {
 	Result
 	Data struct {
 		SysStat         SysStat         `json:"sysstat"`
 		DhcpAddrpoolNum DhcpAddrpoolNum `json:"dhcp_addrpool_num"`
+		AppFlow         AppFlow         `json:"app_flow"`
 	} `json:"data"`
 }
