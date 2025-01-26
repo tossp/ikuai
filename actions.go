@@ -49,9 +49,9 @@ func (i *IKuai) ShowMonitorLan() (*action.ShowMonitorResult, error) {
 	}
 
 	respV6 := &action.ShowMonitorResult{}
-	if _, err = i.Run(i.session, action.NewMonitorLanIpv6Action(), respV6); err == nil && respV6.Data.Total > 0 {
+	if _, err = i.Run(i.session, action.NewMonitorLanIpv6Action(), respV6); err == nil && len(respV6.Data.Data) > 0 {
 		resp.Data.Data = append(resp.Data.Data, respV6.Data.Data...)
-		resp.Data.Total += respV6.Data.Total
+		resp.Data.Total += len(respV6.Data.Data)
 	}
 	return resp, nil
 }
